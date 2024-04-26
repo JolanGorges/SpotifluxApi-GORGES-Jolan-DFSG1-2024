@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\TrackRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\TrackRepository;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: TrackRepository::class)]
 class Track
@@ -11,12 +12,15 @@ class Track
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
+    #[Groups(['read', 'create', 'update'])]
     private ?string $title = null;
 
     #[ORM\Column]
+    #[Groups(['read', 'create', 'update'])]
     private ?int $duration = null;
 
     #[ORM\ManyToOne(inversedBy: 'tracks')]

@@ -21,6 +21,13 @@ class TrackRepository extends ServiceEntityRepository
         parent::__construct($registry, Track::class);
     }
 
+    // public function getAllTracksQuery()
+    // {
+    //     return $this->createQueryBuilder('m')
+    //         ->orderBy('m.id', 'ASC')
+    //         ->getQuery();
+    // }
+
     //    /**
     //     * @return Track[] Returns an array of Track objects
     //     */
