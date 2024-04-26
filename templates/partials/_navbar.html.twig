@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#"></a>
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="/" aria-current="page"
+            >Accueil <span class="visually-hidden">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/artists">Artistes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/albums">Albums</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tracks">Musiques</a>
+        </li>
+      </ul>
+      <div class="d-flex my-2 my-lg-0">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+          {% if (is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')) %}
+            <a class="nav-link" href="/logout">Se déconnecter</a>
+          {% else %}
+            <a class="nav-link" href="/login">Se connecter</a>
+          {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

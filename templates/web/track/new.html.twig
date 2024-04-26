@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle musique{% endblock %}
+
+{% block body %}
+    <h1>Ajouter une nouvelle musique</h1>
+
+    {{ include('web/track/_form.html.twig') }}
+
+    <a href="{{ path('app_web_track_index') }}">Revenir à la liste</a>
+{% endblock %}

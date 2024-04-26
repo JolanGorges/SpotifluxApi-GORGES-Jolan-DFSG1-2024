@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier l'artiste{% endblock %}
+
+{% block body %}
+    <h1>Modifier l'artiste</h1>
+
+    {{ include('web/artist/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_web_artist_index') }}">Modifier la liste</a>
+
+    {{ include('web/artist/_delete_form.html.twig') }}
+{% endblock %}
